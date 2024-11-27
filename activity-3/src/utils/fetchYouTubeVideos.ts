@@ -1,3 +1,5 @@
+import { YouTubeApiResponse } from "@/types/youtube";
+
 import { YouTubeVideo } from "@/types/youtube";
 
 const YOUTUBE_API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;

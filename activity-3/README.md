@@ -19,6 +19,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [x] Add API key to .env file
 - [x] Create mock call to YouTube API
 - [x] Deploy to Vercel
+- [ ] Add react-query for fetching data
+- [ ] Add search input and button
+- [ ] Add basic video card component
+- [ ] Add basic video player component
 
 Thoughts:
 
