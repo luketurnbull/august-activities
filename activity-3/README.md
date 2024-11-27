@@ -1,3 +1,7 @@
+## Deployed to Vercel
+
+https://youtube-favs-amber.vercel.app/
+
 ## Running the project
 
 ```bash
@@ -14,7 +18,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [x] Create project in GC Console and get API key
 - [x] Add API key to .env file
 - [x] Create mock call to YouTube API
-- [ ] Deploy to Vercel
+- [x] Deploy to Vercel
 
 Thoughts:
 
