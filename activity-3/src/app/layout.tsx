@@ -15,7 +15,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "YouTube Favs",
-  description: "Save and watch your favourite YouTube videos",
+  description: "Your favourite place to store your favourite YouTube videos",
 };
 
 export default function RootLayout({
@@ -28,7 +28,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main>{children}</main>
+        <header className="flex items-center p-2 container">
+          <h1 className="text-2xl font-extrabold text-primary">YouTube Favs</h1>
+        </header>
+        <main className="flex justify-center items-center">{children}</main>
+        <footer className="flex justify-center items-center">
+          <p>Your favourite place to store your favourite YouTube videos</p>
+        </footer>
       </body>
     </html>
   );
