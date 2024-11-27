@@ -32,11 +32,4 @@ This is located inside the `activity-3` folder.
 
 ### Activity 3
 
-- [ ] Create next app with TypeScript and Tailwind
-- [ ] Add shadcn/ui for quick component creation
-- [ ] Look into [YouTube API)(https://developers.google.com/youtube/v3/getting-started)
-
-Thoughts:
-
-- Use Zustand for state management? Easy to add local storage.
-- Use react-query for fetching data? Or too overkill? Decide later.
+Moved todos to the `activity-3/README.md` file.
