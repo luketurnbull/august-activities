@@ -1,10 +1,12 @@
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useGlobalStore } from "@/stores/global";
 
 export default function Header({ title }: { title: string }) {
+  const { toggleSidebar } = useGlobalStore();
+
   const onMenuClick = () => {
-    console.log("clicked");
-    // TODO: Move to Zustand one added
+    toggleSidebar();
   };
 
   return (

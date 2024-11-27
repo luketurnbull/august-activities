@@ -31,6 +31,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [ ] Add error if no name is entered
 - [ ] Show favourites page first
 - [ ] Create store for favourites
+- [ ] Add functionality to add/remove from favourites
+- [ ] Add store for tracking sidebar open/close
+- [ ] local storage for user name
+- [ ] Message August about YT API out of free tier
 
 Thoughts:
 

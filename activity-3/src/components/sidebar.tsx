@@ -3,19 +3,16 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useUserStore } from "@/stores/user";
+import { useGlobalStore } from "@/stores/global";
 
-export default function Sidebar({
-  open,
-  onClose,
-}: {
-  open: boolean;
-  onClose: () => void;
-}) {
+export default function Sidebar() {
   const { name } = useUserStore();
+  const { isSidebarOpen, toggleSidebar } = useGlobalStore();
+
   return (
     <div
-      className={`fixed inset-y-0 left-0 z-50 w-64 transform transition-transform duration-300 ease-in-out ${
-        open ? "translate-x-0" : "-translate-x-full"
+      className={`fixed inset-y-0 left-0 z-50 w-64 transform transition-transform bg-white duration-300 ease-in-out ${
+        isSidebarOpen ? "translate-x-0" : "-translate-x-full"
       } md:relative md:translate-x-0`}
     >
       <div className="flex items-center justify-between p-4">
@@ -26,7 +23,7 @@ export default function Sidebar({
           variant="ghost"
           size="icon"
           className="md:hidden"
-          onClick={onClose}
+          onClick={toggleSidebar}
         >
           <X className="h-6 w-6" />
           <span className="sr-only">Close sidebar</span>

@@ -7,13 +7,16 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function Home() {
-  const [input, setInput] = useState("");
-  const { setName } = useUserStore();
+  const { setName, name } = useUserStore();
+  const [input, setInput] = useState<string>("");
   const router = useRouter();
 
   const onContinue = () => {
     if (input) {
       setName(input);
+    }
+
+    if (name || input) {
       router.push("/favs/search");
     }
   };
@@ -27,15 +30,19 @@ export default function Home() {
         </p>
       </div>
       <div className="flex flex-col gap-2">
-        <Input
-          placeholder="Enter your name"
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              onContinue();
-            }
-          }}
-        />
+        {name ? (
+          <p className="text-lg text-gray-500">Welcome back, {name}!</p>
+        ) : (
+          <Input
+            placeholder="Enter your name"
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                onContinue();
+              }
+            }}
+          />
+        )}
         <Button onClick={onContinue}>Continue</Button>
       </div>
     </div>
