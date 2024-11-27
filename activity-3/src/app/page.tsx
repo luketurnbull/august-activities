@@ -1,6 +1,6 @@
 "use client";
 
-import YtApiTest from "@/components/yt-api-test";
+import VideoSearch from "@/components/video-search";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 const queryClient = new QueryClient();
@@ -11,7 +11,7 @@ export default function Home() {
       <div className="font-[family-name:var(--font-geist-sans)]">
         <main>
           <h1>Hello World</h1>
-          <YtApiTest />
+          <VideoSearch />
         </main>
         <footer>
           <p>Footer</p>

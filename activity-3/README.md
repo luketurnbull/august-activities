@@ -13,14 +13,15 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## TODO
 
 - [x] Create next app with TypeScript and Tailwind
-- [ ] Add shadcn/ui for quick component creation
+- [x] Add shadcn/ui for quick component creation
 - [x] Look into [YouTube API)(https://developers.google.com/youtube/v3/getting-started)
 - [x] Create project in GC Console and get API key
 - [x] Add API key to .env file
 - [x] Create mock call to YouTube API
 - [x] Deploy to Vercel
-- [ ] Add react-query for fetching data
-- [ ] Add search input and button
+- [x] Add react-query for fetching data
+- [x] Add search input and button
+- [x] Updated global.css to use youtube red
 - [ ] Add basic video card component
 - [ ] Add basic video player component
 
