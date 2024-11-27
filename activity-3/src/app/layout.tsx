@@ -28,13 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="flex items-center p-2 container">
-          <h1 className="text-2xl font-extrabold text-primary">YouTube Favs</h1>
-        </header>
-        <main className="flex justify-center items-center">{children}</main>
-        <footer className="flex justify-center items-center">
-          <p>Your favourite place to store your favourite YouTube videos</p>
-        </footer>
+        {children}
       </body>
     </html>
   );

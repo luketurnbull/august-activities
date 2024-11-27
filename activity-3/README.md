@@ -22,6 +22,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [x] Add react-query for fetching data
 - [x] Add search input and button
 - [x] Updated global.css to use youtube red
+- [x] Add layout component with sidebar and header
 - [ ] Add basic video card component
 - [ ] Add basic video player component
 

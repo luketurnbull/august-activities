@@ -5,6 +5,7 @@ import { YouTubeVideo } from "@/types/youtube";
 import { fetchYouTubeVideos } from "@/utils/fetchYouTubeVideos";
 import { useQuery } from "react-query";
 import { Input } from "./ui/input";
+import { ScrollArea } from "./ui/scroll-area";
 
 export default function VideoSearch() {
   const [inputValue, setInputValue] = useState("surfing");
@@ -24,12 +25,12 @@ export default function VideoSearch() {
           onChange={(e) => setInputValue(e.target.value)}
         />
       </div>
-      <div>
+      <ScrollArea className="h-[calc(100vh-10rem)]">
         {isLoading && <div>Loading...</div>}
         {data && (
           <pre>{data.map((video) => video.snippet.title).join("\n")}</pre>
         )}
-      </div>
+      </ScrollArea>
     </div>
   );
 }
