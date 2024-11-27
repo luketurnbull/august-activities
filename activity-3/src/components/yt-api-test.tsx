@@ -1,23 +1,25 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
-const YOUTUBE_API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
+import { YouTubeVideo } from "@/types/youtube";
+import { fetchYouTubeVideos } from "@/utils/fetchYouTubeVideos";
+import { useQuery } from "react-query";
 
 export default function YtApiTest() {
-  const [data, setData] = useState<unknown>(null);
-  useEffect(() => {
-    fetch(
-      `https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&q=surfing`
-    )
-      .then((res) => res.json())
-      .then((data) => setData(data));
-  }, []);
+  const { data, isLoading } = useQuery<YouTubeVideo[]>({
+    queryKey: ["youtubeVideos", "surfing"],
+    queryFn: () => fetchYouTubeVideos("surfing"),
+  });
 
   return (
     <div>
       <h1>YtApiTest</h1>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      <div>
+        {isLoading && <div>Loading...</div>}
+
+        {data && (
+          <pre>{data.map((video) => video.snippet.title).join("\n")}</pre>
+        )}
+      </div>
     </div>
   );
 }
