@@ -1,7 +1,8 @@
-import { X, Search, Star } from "lucide-react";
+import { X, Search, Star, User } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { useUserStore } from "@/stores/user";
 
 export default function Sidebar({
   open,
@@ -10,6 +11,7 @@ export default function Sidebar({
   open: boolean;
   onClose: () => void;
 }) {
+  const { name } = useUserStore();
   return (
     <div
       className={`fixed inset-y-0 left-0 z-50 w-64 transform transition-transform duration-300 ease-in-out ${
@@ -29,6 +31,12 @@ export default function Sidebar({
           <X className="h-6 w-6" />
           <span className="sr-only">Close sidebar</span>
         </Button>
+      </div>
+      <div className="py-2 px-4">
+        <div className="flex items-center gap-2">
+          <User className="h-6 w-6" />
+          {name}
+        </div>
       </div>
       <ScrollArea className="flex-grow">
         <nav className="space-y-2 p-4">

@@ -25,9 +25,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [x] Add layout component with sidebar and header
 - [ ] Add basic video card component
 - [ ] Add basic video player component
-- [ ] Add Zustand for state management
+- [x] Add Zustand for state management
 - [ ] Add to favs button functionality
-- [ ] Input on splash page to ask for users name
+- [x] Input on splash page to ask for users name
+- [ ] Add error if no name is entered
+- [ ] Show favourites page first
+- [ ] Create store for favourites
 
 Thoughts:
 

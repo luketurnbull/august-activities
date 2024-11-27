@@ -20,7 +20,6 @@ export default function Header({ title }: { title: string }) {
           <span className="sr-only">Open sidebar</span>
         </Button>
         <h1 className="text-2xl font-semibold text-gray-800">{title}</h1>
-        <div className="flex items-center">Hello user</div>
       </div>
     </header>
   );
