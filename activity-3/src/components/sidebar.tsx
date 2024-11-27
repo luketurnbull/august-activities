@@ -16,9 +16,7 @@ export default function Sidebar() {
       } md:relative md:translate-x-0`}
     >
       <div className="flex items-center justify-between p-4">
-        <span className="text-2xl font-extrabold text-primary">
-          YouTube Favs
-        </span>
+        <span className="text-2xl font-extrabold">YouTube Favs</span>
         <Button
           variant="ghost"
           size="icon"
@@ -29,14 +27,14 @@ export default function Sidebar() {
           <span className="sr-only">Close sidebar</span>
         </Button>
       </div>
-      <div className="py-2 px-4">
-        <div className="flex items-center gap-2">
-          <User className="h-6 w-6" />
-          {name}
-        </div>
-      </div>
       <ScrollArea className="flex-grow">
         <nav className="space-y-2 p-4">
+          <Link href="/favs">
+            <Button variant="ghost" className="w-full justify-start">
+              <User className="mr-2 h-4 w-4" />
+              {name}&apos;s Dashboard
+            </Button>
+          </Link>
           <Link href="/favs/search">
             <Button variant="ghost" className="w-full justify-start">
               <Search className="mr-2 h-4 w-4" />

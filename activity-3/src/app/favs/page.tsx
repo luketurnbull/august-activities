@@ -2,10 +2,10 @@
 
 import Header from "@/components/header";
 
-export default function Favourites() {
+export default function Favs() {
   return (
     <>
-      <Header title="Favourites" />
+      <Header title="Dashboard" />
       <main className="flex-1 overflow-hidden bg-gray-100"></main>
     </>
   );
