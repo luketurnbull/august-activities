@@ -36,4 +36,12 @@
   - The carousel
   - The container
 
+## Bringing it to life
+
+- Hover effects on the cards (yellow card and images) to make it feel interactive and stand out
+- Scroll based animations for the text and headings when the user scrolls down the page
+- Possible parallax effect for the background image
+
+## Annotated image
+
 ![alt text](annotated.png)
