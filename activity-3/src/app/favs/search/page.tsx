@@ -1,7 +1,9 @@
 "use client";
 
+import Header from "@/components/header";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import VideoCard from "@/components/video-card";
 import { YouTubeVideo } from "@/types/youtube";
 import { fetchYouTubeVideos } from "@/utils/fetchYouTubeVideos";
 import { useState } from "react";
@@ -17,20 +19,27 @@ export default function Search() {
   });
 
   return (
-    <div>
-      <div className="flex gap-2">
-        <Input
-          placeholder="Search for new favs"
-          defaultValue={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-        />
-      </div>
-      <ScrollArea className="h-[calc(100vh-10rem)]">
-        {isLoading && <div>Loading...</div>}
-        {data && (
-          <pre>{data.map((video) => video.snippet.title).join("\n")}</pre>
-        )}
-      </ScrollArea>
-    </div>
+    <>
+      <Header title="Search" />
+      <main className="flex-1 overflow-hidden bg-gray-100">
+        <ScrollArea className="h-[calc(100vh-10rem)]">
+          <div className="sticky top-0 p-4 bg-white">
+            <Input
+              placeholder="Search for new favs"
+              defaultValue={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+            />
+          </div>
+          <div className="container mx-auto px-6 py-8">
+            {isLoading && <div>Loading...</div>}
+            <div className="flex flex-col gap-4">
+              {data?.map((video: YouTubeVideo) => {
+                return <VideoCard key={video.id.videoId} video={video} />;
+              })}
+            </div>
+          </div>
+        </ScrollArea>
+      </main>
+    </>
   );
 }
