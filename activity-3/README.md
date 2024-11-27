@@ -10,10 +10,11 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 - [x] Create next app with TypeScript and Tailwind
 - [ ] Add shadcn/ui for quick component creation
-- [ ] Look into [YouTube API)(https://developers.google.com/youtube/v3/getting-started)
+- [x] Look into [YouTube API)(https://developers.google.com/youtube/v3/getting-started)
 - [x] Create project in GC Console and get API key
 - [x] Add API key to .env file
-- [ ] Create mock call to YouTube API
+- [x] Create mock call to YouTube API
+- [ ] Deploy to Vercel
 
 Thoughts:
 
