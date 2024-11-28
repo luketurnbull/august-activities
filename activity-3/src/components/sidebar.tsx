@@ -31,20 +31,14 @@ export default function Sidebar() {
         <nav className="space-y-2 p-4">
           <Link href="/favs">
             <Button variant="ghost" className="w-full justify-start">
-              <User className="mr-2 h-4 w-4" />
-              {name}&apos;s Dashboard
+              <Star className="mr-2 h-4 w-4" />
+              {name}&apos;s Favs
             </Button>
           </Link>
           <Link href="/favs/search">
             <Button variant="ghost" className="w-full justify-start">
               <Search className="mr-2 h-4 w-4" />
               Search
-            </Button>
-          </Link>
-          <Link href="/favs/favourites">
-            <Button variant="ghost" className="w-full justify-start">
-              <Star className="mr-2 h-4 w-4" />
-              Favs
             </Button>
           </Link>
         </nav>
