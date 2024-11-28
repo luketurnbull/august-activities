@@ -23,18 +23,18 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [x] Add search input and button
 - [x] Updated global.css to use youtube red
 - [x] Add layout component with sidebar and header
+- [x] Add Zustand for state management
+- [x] Input on splash page to ask for users name
+- [x] Show dashboard page first
+- [x] local storage for user name
+- [x] Message August about YT API out of free tier
+- [ ] Create store for favourites
+- [ ] Add to favs button functionality
 - [ ] Add basic video card component
 - [ ] Add basic video player component
-- [x] Add Zustand for state management
-- [ ] Add to favs button functionality
-- [x] Input on splash page to ask for users name
-- [ ] Add error if no name is entered
-- [x] Show dashboard page first
-- [ ] Create store for favourites
 - [ ] Add functionality to add/remove from favourites
 - [ ] Add store for tracking sidebar open/close
-- [ ] local storage for user name
-- [x] Message August about YT API out of free tier
+- [ ] Add error if no name is entered
 
 Thoughts:
 
