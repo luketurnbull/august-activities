@@ -31,10 +31,19 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [x] Create store for favourites
 - [x] Add store for tracking sidebar open/close
 - [x] Add to favs button functionality
-- [ ] Add basic video card component
+- [x] Add functionality to add/remove from favourites
+- [ ] Create page to watch videos
 - [ ] Add basic video player component
-- [ ] Add functionality to add/remove from favourites
-- [ ] Add error if no name is entered
+- [ ] Fire call to YouTube API to get video info
+- [ ] Updated video card component to look nicer and be reused on search page and favs page
+- [ ] Store search in Zustand store so it doesn't clear when navigating to a different page
+- [ ] Add error if no name is entered on the splash page
+
+## Would be nice to have
+
+- [ ] Add Framer Motion for animations
+- [ ] Add Cool splash page - maybe a 3D models of stars that move with the cursor
+- [ ] Store search history in Zustand store and display in dropdown
 
 Thoughts:
 
