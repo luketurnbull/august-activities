@@ -1,10 +1,10 @@
-import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 import { YouTubeVideo } from "@/types/youtube";
 import Image from "next/image";
 import { useFavouritesStore } from "@/stores/favourites";
+import { Star } from "lucide-react";
 export default function VideoCard({ video }: { video: YouTubeVideo }) {
-  const { addFavorite } = useFavouritesStore();
+  const { addFavorite, isFavorite, removeFavorite } = useFavouritesStore();
 
   return (
     <Card key={video.id.videoId}>
@@ -21,7 +21,19 @@ export default function VideoCard({ video }: { video: YouTubeVideo }) {
         <div className="flex flex-col gap-2">
           <h3 className="text-lg font-semibold">{video.snippet.title}</h3>
           <p className="text-sm text-gray-500">{video.snippet.description}</p>
-          <Button onClick={() => addFavorite(video)}>Add to favourites</Button>
+
+          {isFavorite(video.id.videoId) ? (
+            <Star
+              className="text-yellow-500 hover:cursor-pointer hover:text-yellow-600"
+              fill="currentColor"
+              onClick={() => removeFavorite(video.id.videoId)}
+            />
+          ) : (
+            <Star
+              className="hover:cursor-pointer hover:text-yellow-600"
+              onClick={() => addFavorite(video)}
+            />
+          )}
         </div>
       </div>
     </Card>
