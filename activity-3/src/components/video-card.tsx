@@ -3,6 +3,7 @@ import { YouTubeVideo } from "@/types/youtube";
 import Image from "next/image";
 import { useFavouritesStore } from "@/stores/favourites";
 import { Star } from "lucide-react";
+
 export default function VideoCard({ video }: { video: YouTubeVideo }) {
   const { addFavorite, isFavorite, removeFavorite } = useFavouritesStore();
 
