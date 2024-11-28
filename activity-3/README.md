@@ -28,12 +28,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [x] Show dashboard page first
 - [x] local storage for user name
 - [x] Message August about YT API out of free tier
-- [ ] Create store for favourites
-- [ ] Add to favs button functionality
+- [x] Create store for favourites
+- [x] Add store for tracking sidebar open/close
+- [x] Add to favs button functionality
 - [ ] Add basic video card component
 - [ ] Add basic video player component
 - [ ] Add functionality to add/remove from favourites
-- [ ] Add store for tracking sidebar open/close
 - [ ] Add error if no name is entered
 
 Thoughts:
