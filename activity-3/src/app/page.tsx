@@ -17,7 +17,7 @@ export default function Home() {
     }
 
     if (name || input) {
-      router.push("/favs/search");
+      router.push("/favs");
     }
   };
 
