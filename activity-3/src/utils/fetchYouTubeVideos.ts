@@ -27,7 +27,7 @@ export const fetchYouTubeVideos = async (
     );
 
     if (!response.ok) {
-      throw new Error(`Network response was not ok: ${response.statusText}`);
+      throw new Error(`Network response was not ok: ${await response.text()}`);
     }
 
     const data = await response.json();
@@ -35,9 +35,14 @@ export const fetchYouTubeVideos = async (
       items: data.items,
       nextPageToken: data.nextPageToken,
     };
-  } catch (error) {
-    console.error("Error fetching YouTube videos:", error);
-    toast.error(`Error fetching YouTube videos: ${error}`);
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error("Error fetching YouTube videos:", error.message);
+      toast.error(`Error fetching YouTube videos: ${error.message}`);
+    } else {
+      console.error("Error fetching YouTube videos:", error);
+      toast.error(`Error fetching YouTube videos: ${error}`);
+    }
     return { items: [] };
   }
 };

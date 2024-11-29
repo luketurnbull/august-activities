@@ -1,33 +1,22 @@
 "use client";
 
 import Header from "@/components/header";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import VideoCard from "@/components/video-card";
 import { YouTubeVideo } from "@/types/youtube";
+import { debounce } from "@/utils/debounce";
 import { fetchYouTubeVideos } from "@/utils/fetchYouTubeVideos";
 import { videoToKey } from "@/utils/videoToKey";
-import { Loader2 } from "lucide-react";
+import { Loader2, Search as SearchIcon, X } from "lucide-react";
 import { useState, useMemo } from "react";
 import { useInfiniteQuery } from "react-query";
 
-function debounce<T extends (...args: Parameters<T>) => void>(
-  func: T,
-  delay: number
-) {
-  let timeoutId: NodeJS.Timeout | undefined;
-  return (...args: Parameters<T>) => {
-    if (timeoutId) {
-      clearTimeout(timeoutId);
-    }
-    timeoutId = setTimeout(() => {
-      func(...args);
-    }, delay);
-  };
-}
-
 export default function Search() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [inputValue, setInputValue] = useState("");
+  const [isFocused, setIsFocused] = useState(false);
 
   const {
     data,
@@ -43,7 +32,7 @@ export default function Search() {
       return results;
     },
     getNextPageParam: (lastPage) => lastPage.nextPageToken || undefined,
-    enabled: searchTerm.trim().length > 0,
+    enabled: searchTerm.trim().length > 2,
     refetchOnWindowFocus: false,
     refetchOnMount: false,
     refetchOnReconnect: false,
@@ -65,14 +54,20 @@ export default function Search() {
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
+    setInputValue(value);
     debouncedSetSearchTerm(value);
+  };
+
+  const clearSearch = () => {
+    setInputValue("");
+    setSearchTerm("");
   };
 
   const allVideos = useMemo(() => {
     if (!data?.pages) return [];
-    
+
     const seenIds = new Set<string>();
-    
+
     return data.pages
       .flatMap((page) => page.items)
       .filter((video) => {
@@ -91,10 +86,31 @@ export default function Search() {
       <main className="flex-1 overflow-hidden bg-gray-100">
         <ScrollArea onScrollCapture={handleScroll} className="h-full">
           <div className="sticky top-0 p-4 bg-white z-10">
-            <Input
-              placeholder="Search for new favs"
-              onChange={handleSearchChange}
-            />
+            <div className="flex flex-row gap-2 items-center">
+              <div className="relative flex-1">
+                <SearchIcon
+                  className={`absolute left-2 top-1/2 -translate-y-1/2 h-4 w-4 transition-colors ${
+                    isFocused ? "text-primary" : "text-gray-400"
+                  }`}
+                />
+                <Input
+                  placeholder="Search for new favs"
+                  onChange={handleSearchChange}
+                  value={inputValue}
+                  className="pl-8 pr-8"
+                  onFocus={() => setIsFocused(true)}
+                  onBlur={() => setIsFocused(false)}
+                />
+                {inputValue && (
+                  <button
+                    onClick={clearSearch}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                  >
+                    <X className="h-4 w-4" />
+                  </button>
+                )}
+              </div>
+            </div>
           </div>
           <div>
             {isError && (
