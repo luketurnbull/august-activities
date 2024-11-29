@@ -37,13 +37,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [x] Embed YouTube video in modal
 - [x] Updated video card component to look nicer and be reused on search page and favs page
 - [x] Add infinite scroll pagination to search results
-- [ ] Add sonner for notifications
-- [ ] Store search in Zustand store so it doesn't clear when navigating to a different page
-- [ ] Add error if no name is entered on the splash page
-- [ ] Added error handling to fetchYouTubeVideos
+- [x] Add sonner for notifications
+- [x] Added error handling to fetchYouTubeVideos
 - [ ] Show state of no search results
 - [ ] Show state of no favourites
-- [ ] Create slightly different video card for favourites page (maybe cross instead of star icon)
+- [ ] Add error if no name is entered on the splash page
+- [ ] Store search in Zustand store so it doesn't clear when navigating to a different page
 
 ## Would be nice to have
 

@@ -1,4 +1,5 @@
 import { YouTubeVideo } from "@/types/youtube";
+import { toast } from "sonner";
 
 interface YouTubeResponse {
   items: YouTubeVideo[];
@@ -26,7 +27,7 @@ export const fetchYouTubeVideos = async (
     );
 
     if (!response.ok) {
-      throw new Error("Network response was not ok");
+      throw new Error(`Network response was not ok: ${response.statusText}`);
     }
 
     const data = await response.json();
@@ -36,6 +37,7 @@ export const fetchYouTubeVideos = async (
     };
   } catch (error) {
     console.error("Error fetching YouTube videos:", error);
+    toast.error(`Error fetching YouTube videos: ${error}`);
     return { items: [] };
   }
 };
