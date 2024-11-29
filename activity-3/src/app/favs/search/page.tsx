@@ -1,7 +1,6 @@
 "use client";
 
 import Header from "@/components/header";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import VideoCard from "@/components/video-card";
