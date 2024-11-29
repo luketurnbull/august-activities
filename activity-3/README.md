@@ -37,6 +37,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [x] Embed YouTube video in modal
 - [x] Updated video card component to look nicer and be reused on search page and favs page
 - [x] Add infinite scroll pagination to search results
+- [ ] Add sonner for notifications
 - [ ] Store search in Zustand store so it doesn't clear when navigating to a different page
 - [ ] Add error if no name is entered on the splash page
 - [ ] Added error handling to fetchYouTubeVideos

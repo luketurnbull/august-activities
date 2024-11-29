@@ -3,14 +3,12 @@ import { YouTubeVideo } from "@/types/youtube";
 import Image from "next/image";
 import VideoPlayerDialog from "./video-player-dialog";
 import FavouriteButton from "./favourite-button";
-import { memo } from "react";
 
-const VideoCard = memo(function VideoCard({ video }: { video: YouTubeVideo }) {
+export default function VideoCard({ video }: { video: YouTubeVideo }) {
   if (!video) return null;
 
   return (
     <Card
-      key={video.id.videoId}
       className="
         h-[450px]
         w-[300px]
@@ -45,6 +43,4 @@ const VideoCard = memo(function VideoCard({ video }: { video: YouTubeVideo }) {
       </VideoPlayerDialog>
     </Card>
   );
-});
-
-export default VideoCard;
+}

@@ -21,7 +21,7 @@ export const fetchYouTubeVideos = async (
         process.env.NEXT_PUBLIC_YOUTUBE_API_KEY
       }&maxResults=${MAX_RESULTS}${pageToken ? `&pageToken=${pageToken}` : ""}`,
       {
-        cache: "force-cache",
+        cache: "no-store",
       }
     );
 

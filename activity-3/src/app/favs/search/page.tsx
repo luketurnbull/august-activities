@@ -6,8 +6,9 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import VideoCard from "@/components/video-card";
 import { YouTubeVideo } from "@/types/youtube";
 import { fetchYouTubeVideos } from "@/utils/fetchYouTubeVideos";
+import { videoToKey } from "@/utils/videoToKey";
 import { Loader2 } from "lucide-react";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useInfiniteQuery } from "react-query";
 
 function debounce<T extends (...args: Parameters<T>) => void>(
@@ -43,8 +44,6 @@ export default function Search() {
     },
     getNextPageParam: (lastPage) => lastPage.nextPageToken || undefined,
     enabled: searchTerm.trim().length > 0,
-    staleTime: 1000 * 60 * 5,
-    cacheTime: 1000 * 60 * 30,
     refetchOnWindowFocus: false,
     refetchOnMount: false,
     refetchOnReconnect: false,
@@ -69,14 +68,29 @@ export default function Search() {
     debouncedSetSearchTerm(value);
   };
 
-  const allVideos = data?.pages.flatMap((page) => page.items) ?? [];
+  const allVideos = useMemo(() => {
+    if (!data?.pages) return [];
+    
+    const seenIds = new Set<string>();
+    
+    return data.pages
+      .flatMap((page) => page.items)
+      .filter((video) => {
+        const videoKey = videoToKey(video);
+        if (seenIds.has(videoKey)) {
+          return false;
+        }
+        seenIds.add(videoKey);
+        return true;
+      });
+  }, [data?.pages]);
 
   return (
     <>
       <Header title="Search" />
       <main className="flex-1 overflow-hidden bg-gray-100">
         <ScrollArea onScrollCapture={handleScroll} className="h-full">
-          <div className="sticky top-0 p-4 bg-white">
+          <div className="sticky top-0 p-4 bg-white z-10">
             <Input
               placeholder="Search for new favs"
               onChange={handleSearchChange}
@@ -90,7 +104,7 @@ export default function Search() {
             )}
             <section className="flex flex-row flex-wrap gap-5 w-fullover flow-hidden max-w-full content-center justify-center p-6">
               {allVideos.map((video: YouTubeVideo) => (
-                <VideoCard key={video.id.videoId} video={video} />
+                <VideoCard key={videoToKey(video)} video={video} />
               ))}
             </section>
 
