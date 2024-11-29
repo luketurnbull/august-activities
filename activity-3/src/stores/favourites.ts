@@ -1,6 +1,7 @@
 import { YouTubeVideo } from "@/types/youtube";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import { toast } from "sonner";
 
 interface FavouritesStore {
   favorites: YouTubeVideo[];
@@ -21,15 +22,24 @@ export const useFavouritesStore = create<FavouritesStore>()(
       addFavorite: (video) =>
         set((state) => {
           if (get().isFavorite(video.id.videoId)) return state;
+          toast.success(`Added "${video.snippet.title}" to your favs!`);
           return {
             favorites: [...state.favorites, video],
           };
         }),
 
       removeFavorite: (id) =>
-        set((state) => ({
-          favorites: state.favorites.filter((video) => video.id.videoId !== id),
-        })),
+        set((state) => {
+          const video = state.favorites.find(
+            (video) => video.id.videoId === id
+          );
+          toast.info(`Removed "${video?.snippet.title}" from your favs!`);
+          return {
+            favorites: state.favorites.filter(
+              (video) => video.id.videoId !== id
+            ),
+          };
+        }),
     }),
     {
       name: "favourites-storage",
