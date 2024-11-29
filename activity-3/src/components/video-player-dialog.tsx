@@ -20,15 +20,14 @@ export default function VideoPlayerDialog({
       <DialogTrigger className="hover:cursor-pointer hover:shadow-lg">
         {children}
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="max-w-none md:max-w-[90%]">
         <DialogHeader>
           <DialogTitle>{video.snippet.title}</DialogTitle>
           <DialogDescription>{video.snippet.description}</DialogDescription>
         </DialogHeader>
-        <div className="grid gap-4 py-4">
+        <div className="relative w-full pt-[56.25%]">
           <iframe
-            width="100%"
-            height="315"
+            className="absolute top-0 left-0 w-full h-full"
             src={`https://www.youtube.com/embed/${video.id.videoId}`}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

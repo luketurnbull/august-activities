@@ -50,20 +50,17 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [ ] Add Cool splash page - maybe a 3D models of stars that move with the cursor
 - [ ] Store search history in Zustand store and display in dropdown
 
-Thoughts:
+## Aims
 
 "create an app which allows users
 to search and play YouTube videos via the YouTube API."
-
-YouTube APIs needed:
-Search API: https://developers.google.com/youtube/v3/docs/search/list
-Videos API: https://developers.google.com/youtube/v3/docs/videos/list
 
 "You also need to enable users to manage local storage and curate a list of
 selected or favourite YouTube videos so they can come back to those clips
 and watch them again."
 
-Local storage needed. Initial thoughts are to use Zustand for this. Maybe react-query just because I love it so much.
-
-- Use Zustand for state management? Easy to add local storage.
-- Use react-query for fetching data? Or too overkill? Decide later.
+- Search for videos
+- Play videos
+- Add videos to favourites
+- View favourites
+- Remove from favourites
