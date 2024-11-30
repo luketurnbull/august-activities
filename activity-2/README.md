@@ -18,10 +18,13 @@ Just open `index.html` in the browser.
 - [x] Create navigation with hamburger menu for mobile
 - [x] Add image to first section with centred content
 - [x] Style first section
-- [ ] Add two column layout to second section with image on right
-- [ ] Mobile first, stack columns on mobile
-- [ ] Style second section
+- [x] Add two column layout to second section with image on right
+- [x] Mobile first, stack columns on mobile
+- [x] Style second section
 - [ ] Style footer
+- [ ] Add focus and hover states to navigation
+- [ ] Add focus and hover states to buttons
+- [ ] Make sure page is tabable and accessible
 
 ## Aims
 
