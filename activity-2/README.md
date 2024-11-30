@@ -25,6 +25,7 @@ Just open `index.html` in the browser.
 - [ ] Add focus and hover states to navigation
 - [ ] Add focus and hover states to buttons
 - [ ] Make sure page is tabable and accessible
+- [ ] Fix issue with header image height on mobile showing minor gap at bottom and top of image
 
 ## Aims
 
