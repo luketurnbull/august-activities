@@ -39,8 +39,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [x] Add infinite scroll pagination to search results
 - [x] Add sonner for notifications
 - [x] Added error handling to fetchYouTubeVideos
+- [x] Show state of no favourites
 - [ ] Show state of no search results
-- [ ] Show state of no favourites
 - [ ] Add error if no name is entered on the splash page
 - [ ] Store search in Zustand store so it doesn't clear when navigating to a different page
 

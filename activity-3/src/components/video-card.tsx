@@ -33,7 +33,7 @@ export default function VideoCard({ video }: { video: YouTubeVideo }) {
               priority={true}
             />
           </div>
-          <div className="flex flex-col gap-2 p-2">
+          <div className="flex flex-col gap-2 px-4 py-2">
             <div className="flex flex-row justify-between">
               <h3 className="text-lg font-semibold">{video.snippet.title}</h3>
             </div>

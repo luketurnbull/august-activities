@@ -88,7 +88,7 @@ export default function Search() {
             <div className="flex flex-row gap-2 items-center">
               <div className="relative flex-1">
                 <SearchIcon
-                  className={`absolute left-2 top-1/2 -translate-y-1/2 h-4 w-4 transition-colors ${
+                  className={`absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 transition-colors ${
                     isFocused ? "text-primary" : "text-gray-400"
                   }`}
                 />
@@ -96,16 +96,16 @@ export default function Search() {
                   placeholder="Search for new favs"
                   onChange={handleSearchChange}
                   value={inputValue}
-                  className="pl-8 pr-8"
+                  className="pl-12 pr-12"
                   onFocus={() => setIsFocused(true)}
                   onBlur={() => setIsFocused(false)}
                 />
                 {inputValue && (
                   <button
                     onClick={clearSearch}
-                    className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
                   >
-                    <X className="h-4 w-4" />
+                    <X className="h-5 w-5" />
                   </button>
                 )}
               </div>

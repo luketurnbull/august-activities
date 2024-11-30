@@ -35,7 +35,7 @@ export default function Favourites() {
               </p>
             </div>
             <Link href="/favs/search">
-              <Button>Search for videos</Button>
+              <Button size="lg">Search for videos</Button>
             </Link>
           </div>
         )}

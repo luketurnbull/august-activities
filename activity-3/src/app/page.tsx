@@ -43,7 +43,9 @@ export default function Home() {
             }}
           />
         )}
-        <Button onClick={onContinue}>Continue</Button>
+        <Button size="lg" onClick={onContinue}>
+          Continue
+        </Button>
       </div>
     </div>
   );

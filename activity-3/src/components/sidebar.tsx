@@ -31,13 +31,14 @@ export default function Sidebar() {
         </Button>
       </div>
       <ScrollArea className="flex-grow">
-        <nav className="space-y-2 p-4">
+        <nav className="flex flex-col gap-2 p-4">
           <Link href="/favs">
             <Button
               variant="ghost"
+              size="lg"
               className={cn(
                 "w-full justify-start",
-                pathname === "/favs" && "bg-secondary"
+                pathname === "/favs" && "bg-primary text-white"
               )}
             >
               <Star className="mr-2 h-4 w-4" />
@@ -47,9 +48,10 @@ export default function Sidebar() {
           <Link href="/favs/search">
             <Button
               variant="ghost"
+              size="lg"
               className={cn(
                 "w-full justify-start",
-                pathname === "/favs/search" && "bg-secondary"
+                pathname === "/favs/search" && "bg-primary text-white"
               )}
             >
               <Search className="mr-2 h-4 w-4" />

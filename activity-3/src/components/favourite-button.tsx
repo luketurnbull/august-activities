@@ -42,6 +42,7 @@ export default function FavouriteButton({ video }: { video: YouTubeVideo }) {
             </DialogClose>
             <Button
               variant="destructive"
+              size="lg"
               onClick={() => removeFavorite(video.id.videoId)}
             >
               Remove
