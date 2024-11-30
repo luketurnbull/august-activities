@@ -35,9 +35,7 @@ export default function FavouriteButton({ video }: { video: YouTubeVideo }) {
           <DialogHeader>
             <DialogTitle>Remove this fav?</DialogTitle>
           </DialogHeader>
-          <DialogDescription>
-            <p>{video.snippet.title}</p>
-          </DialogDescription>
+          <DialogDescription>{video.snippet.title}</DialogDescription>
           <DialogFooter>
             <DialogClose asChild>
               <Button variant="secondary">Cancel</Button>
