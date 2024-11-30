@@ -19,7 +19,7 @@ export default function Sidebar() {
       } md:relative md:translate-x-0`}
     >
       <div className="flex items-center justify-between p-4">
-        <span className="text-2xl font-extrabold">YouTube Favs</span>
+        <span className="text-2xl font-extrabold">Favs</span>
         <Button
           variant="ghost"
           size="icon"

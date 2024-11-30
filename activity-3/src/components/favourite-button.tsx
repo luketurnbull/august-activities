@@ -38,7 +38,9 @@ export default function FavouriteButton({ video }: { video: YouTubeVideo }) {
           <DialogDescription>{video.snippet.title}</DialogDescription>
           <DialogFooter>
             <DialogClose asChild>
-              <Button variant="secondary">Cancel</Button>
+              <Button size="lg" variant="secondary">
+                Cancel
+              </Button>
             </DialogClose>
             <Button
               variant="destructive"
