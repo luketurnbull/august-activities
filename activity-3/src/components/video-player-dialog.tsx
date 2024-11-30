@@ -17,7 +17,7 @@ export default function VideoPlayerDialog({
 }) {
   return (
     <Dialog>
-      <DialogTrigger className="hover:cursor-pointer hover:shadow-2xl">
+      <DialogTrigger className="hover:cursor-pointer transition-all duration-300 hover:ring-4 hover:ring-white/40 hover:ring-offset-4 hover:ring-offset-black/10 rounded-lg">
         {children}
       </DialogTrigger>
       <DialogContent className="max-w-none md:max-w-[90%]">

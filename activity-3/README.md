@@ -4,6 +4,18 @@ https://youtube-favs-amber.vercel.app/
 
 ## Running the project
 
+# Update env variables
+
+Follow instructions in env.template to create .env file
+
+You will need a YouTube API key to run the project with NEXT_PUBLIC_YOUTUBE_API_KEY and NEXT_PUBLIC_IS_MOCK=false
+
+If you want to run the project with mock data, set NEXT_PUBLIC_IS_MOCK=true, although this only returns 3 results and you cannot see the infinite scroll working.
+
+The YouTube API key is free tier, so you will only get 100(ish) requests per day.
+
+# Run the project in dev mode
+
 ```bash
 pnpm dev
 ```
@@ -42,8 +54,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [x] Show state of no favourites
 - [x] Store search in Zustand store so it doesn't clear when navigating to a different page
 - [x] Add error if no name is entered on the splash page
+- [x] Add Cool splash page - maybe a 3D models of stars that move with the cursor
 - [ ] Show state of no search results
-- [ ] Add Cool splash page - maybe a 3D models of stars that move with the cursor
 - [ ] Add Framer Motion for animations
 
 ## Aims

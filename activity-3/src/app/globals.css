@@ -60,4 +60,16 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+
+  *:focus-visible {
+    outline: 2px solid rgb(239 68 68);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgb(254 226 226);
+  }
+
+  .ring-offset-background {
+    --ring-color: rgb(239 68 68);
+    --ring-offset-width: 2px;
+    --ring-width: 4px;
+  }
 }

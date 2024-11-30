@@ -7,7 +7,7 @@ import VideoCard from "@/components/video-card";
 import debounce from "debounce";
 import { fetchYouTubeVideos } from "@/utils/fetchYouTubeVideos";
 import { videoToKey } from "@/utils/videoToKey";
-import { Loader2, Search as SearchIcon, X } from "lucide-react";
+import { Search as SearchIcon, StarIcon, X } from "lucide-react";
 import { useState } from "react";
 import { useInfiniteQuery } from "react-query";
 import { useSearchStore } from "@/stores/search";
@@ -118,7 +118,7 @@ export default function Search() {
 
             <div className="flex justify-center items-center p-4">
               {(isFetchingNextPage || isLoading) && (
-                <Loader2 className="w-6 h-6 animate-spin" />
+                <StarIcon className="w-12 h-12 animate-spin text-white" />
               )}
             </div>
           </div>

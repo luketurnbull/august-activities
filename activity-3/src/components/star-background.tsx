@@ -35,8 +35,6 @@ function Experience() {
       x = xRange[0] + x * (xRange[1] - xRange[0]);
       y = yRange[0] + y * (yRange[1] - yRange[0]);
 
-      console.log(x, y);
-
       camera.position.x = x;
       camera.position.y = y;
     }
