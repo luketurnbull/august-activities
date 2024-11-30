@@ -1,12 +1,110 @@
-/* Import browser reset */
-@import "css-reset.css";
-
-/* Import global styles */
 @import "global.css";
 
-/* Import typography */
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+.header {
+  background-image: url("../images/header.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 635px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
 
-body {
-  font-family: "Lato", sans-serif;
+.header section {
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.header p {
+  font-size: 1rem;
+}
+
+nav {
+  width: 100%;
+}
+
+nav.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.2rem;
+  position: relative;
+}
+
+.header-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--color-primary-blue);
+  flex-direction: column;
+  width: 100%;
+  padding: 1.5rem;
+}
+
+.header-menu.active {
+  display: flex;
+}
+
+.header-menu li {
+  margin: 0.6rem 0;
+  text-align: center;
+}
+
+.mobile-menu-toggle {
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 1.5rem;
+  height: 0.2rem;
+  background: var(--color-white);
+  margin: 0.5rem 0;
+  transition: 0.3s;
+}
+
+@media screen and (min-width: 768px) {
+  .header h1 {
+    font-size: 7rem;
+  }
+
+  .header p {
+    font-size: 1.5rem;
+  }
+
+  .mobile-menu-toggle {
+    display: none;
+  }
+
+  .header-menu {
+    display: flex;
+    width: auto;
+    position: static;
+    flex-direction: row;
+    background: none;
+    padding: 0;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .header-menu li {
+    margin: 0;
+  }
 }

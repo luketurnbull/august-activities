@@ -13,11 +13,11 @@ Just open `index.html` in the browser.
 - [x] Add images to the project in `images` folder
 - [x] Add favicon
 - [x] Update `index.html` with the correct elements
-- [ ] Style header
-- [ ] Add logo
-- [ ] Create navigation with hamburger menu for mobile
-- [ ] Add image to first section with centred content
-- [ ] Style first section
+- [x] Style header
+- [x] Add logo
+- [x] Create navigation with hamburger menu for mobile
+- [x] Add image to first section with centred content
+- [x] Style first section
 - [ ] Add two column layout to second section with image on right
 - [ ] Mobile first, stack columns on mobile
 - [ ] Style second section

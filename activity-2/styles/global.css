@@ -1,4 +1,32 @@
+/* Import browser reset */
+@import "./css-reset.css";
+
+/* Import typography */
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+/* Define variables */
 :root {
-  --priamry-blue: #1b1947;
-  --primary-green: #9ebe53;
+  --color-primary-blue: #1b1947;
+  --color-primary-green: #9ebe53;
+  --color-white: #ffffff;
+  --font-lato: "Lato", sans-serif;
+}
+
+/* Global styles */
+body {
+  font-family: var(--font-lato);
+  color: var(--color-white);
+}
+
+/* Container styles */
+.container {
+  max-width: 1200px;
+}
+
+/* Button styles */
+.button-primary {
+  background-color: var(--color-primary-green);
+  color: var(--color-white);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
 }

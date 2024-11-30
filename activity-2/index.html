@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Lifecare Essendon - Leaders in physiotherapy and sports medicine"
+    />
 
     <link rel="icon" type="image/png" href="favicon.svg" />
     <title>
@@ -10,27 +14,41 @@
     </title>
 
     <link rel="stylesheet" href="styles/style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <header>
-      <img src="logo.svg" alt="Lifecare Essendon logo" />
-      <nav>
-        <ul>
-          <li>About</li>
-          <li>Services</li>
-          <li>Team</li>
-          <li>News</li>
-          <li>Contact</li>
+    <header class="header">
+      <nav class="container">
+        <a href="/">
+          <img src="images/logo.svg" alt="Lifecare Essendon logo" />
+        </a>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="header-menu">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><button class="button-primary">Book Now</button></li>
         </ul>
       </nav>
-    </header>
-    <main>
-      <section>
+      <section class="container">
         <h1>Lifecare Essendon</h1>
         <p>Leaders in physiotherapy and sports medicine</p>
       </section>
+    </header>
+    <main>
       <section>
-        <h2>We lead the way when it comes to range, quality and expertise.</h2>
+        <div>
+          <h2>
+            We lead the way when it comes to range, quality and expertise.
+          </h2>
+        </div>
+        <div><img src="images/section-1-main.jpg" alt="" /></div>
       </section>
     </main>
     <footer>
