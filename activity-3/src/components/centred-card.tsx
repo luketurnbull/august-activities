@@ -14,7 +14,7 @@ export default function CentredCard({
 }) {
   return (
     <div className="h-screen flex flex-col gap-8 items-center justify-center">
-      <Card className="p-8 max-w-md">
+      <Card className="p-8 m-8 max-w-md">
         <CardHeader>
           <CardTitle>
             <h3 className="text-center text-4xl">{title}</h3>

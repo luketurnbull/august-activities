@@ -5,6 +5,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { useGlobalStore } from "@/stores/global";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export default function Sidebar() {
   const { isSidebarOpen, toggleSidebar } = useGlobalStore();
@@ -17,7 +18,10 @@ export default function Sidebar() {
       } md:relative md:translate-x-0`}
     >
       <div className="flex items-center justify-between p-4">
-        <span className="text-2xl font-extrabold text-center w-full">Favs</span>
+        <span className="text-2xl font-extrabold text-center w-full">
+          <Image src="/favicon.svg" alt="Favs" width={24} height={24} />
+          Favs
+        </span>
         <Button
           variant="ghost"
           size="icon"
