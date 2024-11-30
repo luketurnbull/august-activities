@@ -9,7 +9,10 @@
   --color-primary-blue: #1b1947;
   --color-primary-green: #9ebe53;
   --color-white: #ffffff;
+  --color-yellow: #ebe772;
   --font-lato: "Lato", sans-serif;
+  --container-padding-mobile: 1.2rem;
+  --container-padding-desktop: 3rem;
 }
 
 /* Global styles */
@@ -21,6 +24,13 @@ body {
 /* Container styles */
 .container {
   max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding-mobile);
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    padding: 0 var(--container-padding-desktop);
+  }
 }
 
 /* Button styles */
