@@ -43,12 +43,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [x] Store search in Zustand store so it doesn't clear when navigating to a different page
 - [x] Add error if no name is entered on the splash page
 - [ ] Show state of no search results
-
-## Would be nice to have
-
-- [ ] Add Framer Motion for animations
 - [ ] Add Cool splash page - maybe a 3D models of stars that move with the cursor
-- [ ] Store search history in Zustand store and display in dropdown
+- [ ] Add Framer Motion for animations
 
 ## Aims
 

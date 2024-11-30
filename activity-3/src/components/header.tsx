@@ -10,7 +10,7 @@ export default function Header({ title }: { title: string }) {
   };
 
   return (
-    <header className="bg-white shadow-lg">
+    <header className="bg-white shadow-lg sticky top-0 z-10">
       <div className="flex items-center justify-between px-6 py-4">
         <Button
           variant="ghost"

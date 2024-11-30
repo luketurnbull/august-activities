@@ -1,17 +1,18 @@
 "use client";
 
 import Header from "@/components/header";
-import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import VideoCard from "@/components/video-card";
 import { useFavouritesStore } from "@/stores/favourites";
 import { videoToKey } from "@/utils/videoToKey";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useUserStore } from "@/stores/user";
+import CentredCard from "@/components/centred-card";
 
 export default function Favourites() {
   const { favorites } = useFavouritesStore();
   const { name } = useUserStore();
+  const router = useRouter();
 
   return (
     <>
@@ -28,18 +29,16 @@ export default function Favourites() {
             </div>
           </ScrollArea>
         ) : (
-          <div className="h-screen flex flex-col gap-8 items-center justify-center">
-            <div className="flex flex-col gap-2 items-center">
-              <h2 className="text-4xl font-bold">No favourites yet</h2>
-              <p>
-                Add some videos to your favourites by clicking the heart icon on
-                any video.
-              </p>
-            </div>
-            <Link href="/favs/search" passHref legacyBehavior>
-              <Button size="lg">Search for videos</Button>
-            </Link>
-          </div>
+          <CentredCard
+            title="No favourites yet"
+            buttonText="Search for videos"
+            onClick={() => router.push("/favs/search")}
+          >
+            <p className="text-center">
+              Add some videos to your favourites by clicking the heart icon on
+              any video.
+            </p>
+          </CentredCard>
         )}
       </main>
     </>
