@@ -12,11 +12,15 @@ This is located inside the `activity-1` folder. The feedback is in the `feedback
 
 ## Activity 2
 
-This is located inside the `activity-2` folder.
+This is located inside the `activity-2` folder. Please see the `README.md` file inside for the todos and feedback.
+
+Also deployed to Vercel: https://lifecare-essendon.vercel.app/
 
 ## Activity 3
 
-This is located inside the `activity-3` folder.
+This is located inside the `activity-3` folder. Please see the `README.md` file inside for the todos and feedback.
+
+Also deployed to Vercel: https://youtube-favs-amber.vercel.app/
 
 ## TODO
 
