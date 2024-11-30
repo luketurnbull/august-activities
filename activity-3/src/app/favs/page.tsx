@@ -8,6 +8,7 @@ import { videoToKey } from "@/utils/videoToKey";
 import { useRouter } from "next/navigation";
 import { useUserStore } from "@/stores/user";
 import CentredCard from "@/components/centred-card";
+import { StarIcon } from "lucide-react";
 
 export default function Favourites() {
   const { favorites } = useFavouritesStore();
@@ -16,7 +17,14 @@ export default function Favourites() {
 
   return (
     <>
-      <Header title={`${name}'s Favs`} />
+      <Header
+        title={
+          <span className="flex items-center gap-2">
+            <StarIcon className="w-6 h-6 text-yellow-400 fill-current outline-black" />
+            {name}&apos;s Favs
+          </span>
+        }
+      />
       <main className="flex-1 overflow-hidden">
         {favorites.length ? (
           <ScrollArea className="h-full">

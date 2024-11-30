@@ -43,7 +43,7 @@ export default function Sidebar() {
                 pathname === "/favs" && "bg-primary text-white"
               )}
             >
-              <Star className="mr-2 h-4 w-4" />
+              <Star className="mr-2 h-4 w-4 text-yellow-400 fill-current outline-black" />
               Your Favs
             </Button>
           </Link>

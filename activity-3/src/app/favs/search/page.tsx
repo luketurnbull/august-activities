@@ -25,7 +25,7 @@ export default function Search() {
 
   const [isFocused, setIsFocused] = useState(false);
 
-  const { isLoading, isError, hasNextPage, fetchNextPage, isFetchingNextPage } =
+  const { isLoading, hasNextPage, isFetchingNextPage, fetchNextPage } =
     useInfiniteQuery({
       queryKey: ["search", searchTerm],
       queryFn: async ({ pageParam = "" }) => {
@@ -74,7 +74,14 @@ export default function Search() {
 
   return (
     <>
-      <Header title="Search" />
+      <Header
+        title={
+          <span className="flex items-center gap-2">
+            <SearchIcon className="w-6 h-6" />
+            Search
+          </span>
+        }
+      />
       <main className="flex-1 overflow-hidden">
         <ScrollArea onScrollCapture={handleScroll} className="h-full">
           <div className="sticky top-0 p-4 bg-white z-10 shadow-lg">
@@ -105,11 +112,6 @@ export default function Search() {
             </div>
           </div>
           <div>
-            {isError && (
-              <div className="flex justify-center items-center h-full">
-                <p>Error fetching search results</p>
-              </div>
-            )}
             <section className="flex flex-row flex-wrap gap-5 w-fullover flow-hidden max-w-full content-center justify-center p-6">
               {allVideos.map((video) => (
                 <VideoCard key={videoToKey(video)} video={video} />

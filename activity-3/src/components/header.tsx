@@ -1,8 +1,9 @@
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useGlobalStore } from "@/stores/global";
+import { ReactNode } from "react";
 
-export default function Header({ title }: { title: string }) {
+export default function Header({ title }: { title: ReactNode }) {
   const { toggleSidebar } = useGlobalStore();
 
   const onMenuClick = () => {
@@ -10,7 +11,7 @@ export default function Header({ title }: { title: string }) {
   };
 
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-10">
+    <header className="bg-white shadow-lg top-0 z-10">
       <div className="flex items-center justify-between px-6 py-4">
         <Button
           variant="ghost"
