@@ -35,9 +35,13 @@ export default function VideoCard({ video }: { video: YouTubeVideo }) {
           </div>
           <div className="flex flex-col gap-2 px-4 py-2">
             <div className="flex flex-row justify-between">
-              <h3 className="text-lg font-semibold">{video.snippet.title}</h3>
+              <h3 className="text-lg font-semibold break-words break-all">
+                {video.snippet.title}
+              </h3>
             </div>
-            <p className="text-sm text-gray-500">{video.snippet.description}</p>
+            <p className="text-sm text-gray-500 break-words break-all">
+              {video.snippet.description}
+            </p>
           </div>
         </div>
       </VideoPlayerDialog>
