@@ -32,7 +32,7 @@ export default function Sidebar() {
       </div>
       <ScrollArea className="flex-grow">
         <nav className="flex flex-col gap-2 p-4">
-          <Link href="/favs">
+          <Link href="/favs" passHref legacyBehavior>
             <Button
               variant="ghost"
               size="lg"
@@ -45,7 +45,7 @@ export default function Sidebar() {
               {name}&apos;s Favs
             </Button>
           </Link>
-          <Link href="/favs/search">
+          <Link href="/favs/search" passHref legacyBehavior>
             <Button
               variant="ghost"
               size="lg"
