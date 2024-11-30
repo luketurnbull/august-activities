@@ -21,9 +21,9 @@ Just open `index.html` in the browser.
 - [x] Add two column layout to second section with image on right
 - [x] Mobile first, stack columns on mobile
 - [x] Style second section
-- [ ] Style footer
-- [ ] Add focus and hover states to navigation
-- [ ] Add focus and hover states to buttons
+- [x] Style footer
+- [x] Add focus and hover states to navigation
+- [x] Add focus and hover states to buttons
 - [ ] Make sure page is tabable and accessible
 - [ ] Fix issue with header image height on mobile showing minor gap at bottom and top of image
 - [ ] Add animation to opening and closing of mobile menu

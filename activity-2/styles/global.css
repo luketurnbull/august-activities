@@ -43,6 +43,10 @@ body {
 .button {
   padding: 0.5rem 1rem;
   border-radius: 1rem;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .button-primary {
@@ -53,4 +57,13 @@ body {
 .button-secondary {
   background-color: var(--color-primary-blue);
   color: var(--color-white);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-white);
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
