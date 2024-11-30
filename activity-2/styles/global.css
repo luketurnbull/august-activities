@@ -15,6 +15,12 @@
   --container-padding-desktop: 3rem;
 }
 
+/* Prevent scroll bounce */
+html,
+body {
+  overscroll-behavior: none;
+}
+
 /* Global styles */
 body {
   font-family: var(--font-lato);
