@@ -24,9 +24,17 @@ body {
 }
 
 /* Button styles */
+.button {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+}
+
 .button-primary {
   background-color: var(--color-primary-green);
   color: var(--color-white);
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
+}
+
+.button-secondary {
+  background-color: var(--color-primary-blue);
+  color: var(--color-white);
 }
