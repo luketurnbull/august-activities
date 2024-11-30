@@ -2,13 +2,11 @@ import { X, Search, Star } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { useUserStore } from "@/stores/user";
 import { useGlobalStore } from "@/stores/global";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 export default function Sidebar() {
-  const { name } = useUserStore();
   const { isSidebarOpen, toggleSidebar } = useGlobalStore();
   const pathname = usePathname();
 
@@ -19,7 +17,7 @@ export default function Sidebar() {
       } md:relative md:translate-x-0`}
     >
       <div className="flex items-center justify-between p-4">
-        <span className="text-2xl font-extrabold">Favs</span>
+        <span className="text-2xl font-extrabold text-center w-full">Favs</span>
         <Button
           variant="ghost"
           size="icon"
@@ -42,7 +40,7 @@ export default function Sidebar() {
               )}
             >
               <Star className="mr-2 h-4 w-4" />
-              {name}&apos;s Favs
+              Your Favs
             </Button>
           </Link>
           <Link href="/favs/search" passHref legacyBehavior>

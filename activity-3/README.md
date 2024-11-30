@@ -40,9 +40,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [x] Add sonner for notifications
 - [x] Added error handling to fetchYouTubeVideos
 - [x] Show state of no favourites
+- [x] Store search in Zustand store so it doesn't clear when navigating to a different page
+- [x] Add error if no name is entered on the splash page
 - [ ] Show state of no search results
-- [ ] Add error if no name is entered on the splash page
-- [ ] Store search in Zustand store so it doesn't clear when navigating to a different page
 
 ## Would be nice to have
 

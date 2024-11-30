@@ -1,25 +1,33 @@
 "use client";
 
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { useUserStore } from "@/stores/user";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { AlertCircle } from "lucide-react";
 
 export default function Home() {
   const { setName, name } = useUserStore();
+  const [error, setError] = useState<string>("");
   const [input, setInput] = useState<string>("");
   const router = useRouter();
 
   const onContinue = () => {
-    if (input) {
-      setName(input);
+    if (name) {
+      router.push("/favs");
+      return;
     }
 
-    if (name || input) {
+    if (input) {
+      setName(input);
       router.push("/favs");
+      return;
     }
+
+    setError("Please enter your name");
   };
 
   return (
@@ -44,13 +52,24 @@ export default function Home() {
             ) : (
               <Input
                 placeholder="Enter your name"
-                onChange={(e) => setInput(e.target.value)}
+                maxLength={20}
+                onChange={(e) => {
+                  setInput(e.target.value);
+                  setError("");
+                }}
                 onKeyDown={(e) => {
                   if (e.key === "Enter") {
                     onContinue();
                   }
                 }}
               />
+            )}
+            {error && (
+              <Alert variant="destructive">
+                <AlertCircle className="h-4 w-4" />
+                <AlertTitle>Error</AlertTitle>
+                <AlertDescription>{error}</AlertDescription>
+              </Alert>
             )}
             <Button size="lg" onClick={onContinue}>
               Continue

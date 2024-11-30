@@ -7,13 +7,15 @@ import VideoCard from "@/components/video-card";
 import { useFavouritesStore } from "@/stores/favourites";
 import { videoToKey } from "@/utils/videoToKey";
 import Link from "next/link";
+import { useUserStore } from "@/stores/user";
 
 export default function Favourites() {
   const { favorites } = useFavouritesStore();
+  const { name } = useUserStore();
 
   return (
     <>
-      <Header title="Your favs" />
+      <Header title={`${name}'s Favs`} />
       <main className="flex-1 overflow-hidden bg-gray-100">
         {favorites.length ? (
           <ScrollArea className="h-full">
@@ -34,7 +36,7 @@ export default function Favourites() {
                 any video.
               </p>
             </div>
-            <Link href="/favs/search">
+            <Link href="/favs/search" passHref legacyBehavior>
               <Button size="lg">Search for videos</Button>
             </Link>
           </div>
