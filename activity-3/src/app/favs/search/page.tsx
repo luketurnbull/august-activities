@@ -75,7 +75,7 @@ export default function Search() {
   return (
     <>
       <Header title="Search" />
-      <main className="flex-1 overflow-hidden bg-gray-100">
+      <main className="flex-1 overflow-hidden">
         <ScrollArea onScrollCapture={handleScroll} className="h-full">
           <div className="sticky top-0 p-4 bg-white z-10 shadow-lg">
             <div className="flex flex-row gap-2 items-center">
