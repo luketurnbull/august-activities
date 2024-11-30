@@ -1,6 +1,7 @@
 @import "global.css";
 
-.header {
+/* Header section */
+#header {
   background-image: url("../images/header.jpg");
   background-size: cover;
   background-position: center;
@@ -9,104 +10,108 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-}
 
-.header section {
-  text-align: center;
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.header h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  line-height: 1;
-}
-
-.header p {
-  font-size: 1rem;
-}
-
-nav {
-  width: 100%;
-}
-
-nav.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 1.2rem;
-  position: relative;
-}
-
-#header-nav.active {
-  background-color: var(--color-primary-blue);
-}
-
-.header-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: var(--color-primary-blue);
-  flex-direction: column;
-  width: 100%;
-  padding: 1.5rem;
-}
-
-.header-menu.active {
-  display: flex;
-}
-
-.header-menu li {
-  margin: 0.6rem 0;
-  text-align: center;
-}
-
-.mobile-menu-toggle {
-  display: block;
-  cursor: pointer;
-  z-index: 100;
-}
-
-.mobile-menu-toggle span {
-  display: block;
-  width: 1.5rem;
-  height: 0.2rem;
-  background: var(--color-white);
-  margin: 0.5rem 0;
-  transition: 0.3s;
-}
-
-@media screen and (min-width: 768px) {
-  .header h1 {
-    font-size: 7rem;
+  section {
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 
-  .header p {
-    font-size: 1.5rem;
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    line-height: 1;
   }
 
-  .mobile-menu-toggle {
-    display: none;
+  p {
+    font-size: 1rem;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  nav.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.2rem;
+    position: relative;
+  }
+
+  #header-nav.active {
+    background-color: var(--color-primary-blue);
   }
 
   .header-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-primary-blue);
+    flex-direction: column;
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .header-menu.active {
     display: flex;
-    width: auto;
-    position: static;
-    flex-direction: row;
-    background: none;
-    padding: 0;
-    gap: 2rem;
-    align-items: center;
   }
 
   .header-menu li {
-    margin: 0;
+    margin: 0.6rem 0;
+    text-align: center;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+    cursor: pointer;
+    z-index: 100;
+  }
+
+  .mobile-menu-toggle span {
+    display: block;
+    width: 1.5rem;
+    height: 0.2rem;
+    background: var(--color-white);
+    margin: 0.5rem 0;
+    transition: 0.3s;
+  }
+
+  @media screen and (min-width: 768px) {
+    h1 {
+      font-size: 7rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+    }
+
+    .header-menu {
+      display: flex;
+      width: auto;
+      position: static;
+      flex-direction: row;
+      background: none;
+      padding: 0;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    #header-nav.active {
+      background-color: transparent;
+    }
+
+    .header-menu li {
+      margin: 0;
+    }
   }
 }
