@@ -4,38 +4,44 @@ import Header from "@/components/header";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import VideoCard from "@/components/video-card";
-import { YouTubeVideo } from "@/types/youtube";
-import { debounce } from "@/utils/debounce";
+import debounce from "debounce";
 import { fetchYouTubeVideos } from "@/utils/fetchYouTubeVideos";
 import { videoToKey } from "@/utils/videoToKey";
 import { Loader2, Search as SearchIcon, X } from "lucide-react";
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { useInfiniteQuery } from "react-query";
+import { useSearchStore } from "@/stores/search";
 
 export default function Search() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [inputValue, setInputValue] = useState("");
+  const {
+    searchTerm,
+    setSearchTerm,
+    inputValue,
+    setInputValue,
+    results,
+    setResults,
+    getAllVideos,
+  } = useSearchStore();
+
   const [isFocused, setIsFocused] = useState(false);
 
-  const {
-    data,
-    isLoading,
-    isError,
-    hasNextPage,
-    fetchNextPage,
-    isFetchingNextPage,
-  } = useInfiniteQuery({
-    queryKey: ["search", searchTerm],
-    queryFn: async ({ pageParam = "" }) => {
-      const results = await fetchYouTubeVideos(searchTerm, pageParam);
-      return results;
-    },
-    getNextPageParam: (lastPage) => lastPage.nextPageToken || undefined,
-    enabled: searchTerm.trim().length > 2,
-    refetchOnWindowFocus: false,
-    refetchOnMount: false,
-    refetchOnReconnect: false,
-  });
+  const { isLoading, isError, hasNextPage, fetchNextPage, isFetchingNextPage } =
+    useInfiniteQuery({
+      queryKey: ["search", searchTerm],
+      queryFn: async ({ pageParam = "" }) => {
+        const results = await fetchYouTubeVideos(searchTerm, pageParam);
+        return results;
+      },
+      getNextPageParam: (lastPage) => lastPage.nextPageToken,
+      enabled: searchTerm.trim().length > 2,
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+      refetchOnReconnect: false,
+      onSuccess: (data) => {
+        setResults(data);
+      },
+      initialData: results,
+    });
 
   const handleScroll = (event: React.UIEvent<HTMLDivElement>) => {
     const target = event.target as HTMLDivElement;
@@ -47,9 +53,11 @@ export default function Search() {
     }
   };
 
-  const debouncedSetSearchTerm = debounce((value: string) => {
-    setSearchTerm(value);
-  }, 500);
+  const debouncedSetSearchTerm = useState(() =>
+    debounce((value: string) => {
+      setSearchTerm(value);
+    }, 500)
+  )[0];
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -62,22 +70,7 @@ export default function Search() {
     setSearchTerm("");
   };
 
-  const allVideos = useMemo(() => {
-    if (!data?.pages) return [];
-
-    const seenIds = new Set<string>();
-
-    return data.pages
-      .flatMap((page) => page.items)
-      .filter((video) => {
-        const videoKey = videoToKey(video);
-        if (seenIds.has(videoKey)) {
-          return false;
-        }
-        seenIds.add(videoKey);
-        return true;
-      });
-  }, [data?.pages]);
+  const allVideos = getAllVideos();
 
   return (
     <>
@@ -118,7 +111,7 @@ export default function Search() {
               </div>
             )}
             <section className="flex flex-row flex-wrap gap-5 w-fullover flow-hidden max-w-full content-center justify-center p-6">
-              {allVideos.map((video: YouTubeVideo) => (
+              {allVideos.map((video) => (
                 <VideoCard key={videoToKey(video)} video={video} />
               ))}
             </section>
